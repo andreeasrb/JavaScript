@@ -89,10 +89,10 @@ let menu = {
 function multiplyNumeric(obj) {
   // - creez un obiect gol, -pt a nu modifica val originale
   // se face clonarea si crearea de obiect nou cu valorile de la obj
-  let menuDuplicate = Object.assign({}, obj); 
-  
+  let menuDuplicate = Object.assign({}, obj);
+
   //un loop prin keys ale obj nou
-  // OPTIMIZARE - se poate optimiza cu una din metodele clasei Object 
+  // OPTIMIZARE - se poate optimiza cu una din metodele clasei Object
   for (let key in menuDuplicate) {
     //verficiam daca tipul obj[key] este numar
     if (typeof menuDuplicate[key] == 'number') {
@@ -115,4 +115,5 @@ console.log('Menu: ', menu);
 //multiplyNumeric(menuDuplicate);
 //console.log('Menu duplicate obj after multiplication: ', menuDuplicate);
 
-
+import './arrays.js';
+import './map-set.js';
