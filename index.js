@@ -117,3 +117,4 @@ console.log('Menu: ', menu);
 
 import './arrays.js';
 import './map-set.js';
+import './destructuring.js';
