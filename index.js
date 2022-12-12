@@ -15,7 +15,7 @@ function hasValue(obj) {
   }
   return false;
 }
-console.log("Schedule obj has key '8.30:' " + hasValue(schedule));
+//console.log("Schedule obj has key '8.30:' " + hasValue(schedule));
 
 function hasValue2(obj) {
   if ('8' in obj) {
@@ -35,10 +35,10 @@ function isEmpty(obj) {
   console.log('Result: ' + result);
   return true;
 }
-console.log('schedule obj isEmpty: ' + isEmpty(schedule));
+//console.log('schedule obj isEmpty: ' + isEmpty(schedule));
 
 schedule = {};
-console.log('schedule obj isEmpty: ' + isEmpty(schedule));
+//console.log('schedule obj isEmpty: ' + isEmpty(schedule));
 
 //Sum all salaries and store in the var "sum"
 let salaries = {
@@ -59,9 +59,9 @@ function calculateSalary(obj) {
   return sum;
 }
 
-console.log('salary sum with obj salaries: ', calculateSalary(salaries));
+//console.log('salary sum with obj salaries: ', calculateSalary(salaries));
 
-console.log('salary sum with obj empty: ', calculateSalary({}));
+//console.log('salary sum with obj empty: ', calculateSalary({}));
 
 //console.log('Sum: ' + sum);
 
@@ -105,8 +105,8 @@ function multiplyNumeric(obj) {
   return menuDuplicate;
 }
 
-console.log('Menu duplicated: ', multiplyNumeric(menu));
-console.log('Menu: ', menu);
+//console.log('Menu duplicated: ', multiplyNumeric(menu));
+//console.log('Menu: ', menu);
 
 //var2
 //Object.assign(menuDuplicate, menu);
@@ -118,3 +118,4 @@ console.log('Menu: ', menu);
 import './arrays.js';
 import './map-set.js';
 import './destructuring.js';
+import './ex.js';

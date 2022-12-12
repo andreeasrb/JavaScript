@@ -9,7 +9,6 @@ function sumInput() {
   //atata timp cat user-ul introduce un numar - afiseaza un prompt
   while (true) {
     //let value = prompt('A number please?', 0);
-
     //termina - BREAK - de intrebat cand user introduce o val ce e un string gol, o val non-numeric sau apasa pe cancel
     if (value === '' || value === null || !isFinite(value)) break;
 
@@ -28,7 +27,7 @@ function sumInput() {
 }
 //alert(sumInput());
 
-/** ARRAYS METHODS */
+/** ARRAY METHODS */
 // TASK 1 - translate border-left-width to borderLeftWidth
 //o functie camelize(str) ce schimba cuvintele despartite cu '-'
 
@@ -51,6 +50,7 @@ function camelize(str) {
   );
 }
 console.log('Camelize str: ', camelize('background-color'));
+console.log('Camelize str: ', camelize('list-style-image'));
 
 // TASK 2 - filter range
 // o functie ce prim un array, se uita pentru elemente cu valoarea >= a si <= b si returneaza ca rezultat un array
@@ -73,7 +73,7 @@ function filterRangeInPlace(arr, a, b) {
     //daca vreun element e in afara intervalului fa splice si sterge.
     if (value < a || value > b) {
       arr.splice(i, 1);
-      i--;
+      i--; // update la index
     }
   }
 }
@@ -171,9 +171,9 @@ let maryy = { name: 'Mary', surname: 'Key', id: 3 };
 let users2 = [johnn, petee, maryy];
 
 //un alt array din users2 cu obiectele avand id, fullName = name + surname
-let usersMapped = users2.map((item) => ({
-  fullName: `${item.name} ${item.surname}`,
-  id: item.id,
+let usersMapped = users2.map(({ name, surname, id }) => ({
+  fullName: `${name} ${surname}`,
+  id: id,
 }));
 console.log('Map to obj fullName:', usersMapped[0].fullName);
 console.log('Map to obj id:', usersMapped[0].id);
@@ -224,11 +224,11 @@ console.log('get average age:', getAverageAge(arr3));
 function unique(arrUnique) {
   let unique = [];
 
-  //loop prin array 
+  //loop prin array
   for (let string of arrUnique) {
-    //daca nu exista elementul(stringul) in array-ul creat - (include) 
+    //daca nu exista elementul(stringul) in array-ul creat - (include)
     if (!unique.includes(string)) {
-      //fa push si adauga-l in array-ul creat 
+      //fa push si adauga-l in array-ul creat
       unique.push(string);
     }
   }
@@ -250,12 +250,10 @@ let strings = [
 
 console.log('unique strings: ', unique(strings));
 
-
 // TASK 13 - created keyed obj from array
 // o functie groupById(arr) ce creaza un OBIECT din array cu id as key si array items as Values
 
 function groupById(arrKeyed) {
-
   return arrKeyed.reduce((obj, value) => {
     obj[value.id] = value;
     return obj;
